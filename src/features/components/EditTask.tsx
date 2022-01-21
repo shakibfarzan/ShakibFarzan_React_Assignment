@@ -80,6 +80,13 @@ function EditTask({ id }: Props): React.ReactElement {
     });
   };
 
+  const onChangeStatus = (value: any): void => {
+    setFormData({
+      ...formData,
+      status: value,
+    });
+  };
+
   const options = [];
   options.push(formData?.status);
   switch (formData?.status) {
@@ -163,7 +170,11 @@ function EditTask({ id }: Props): React.ReactElement {
           {descError && (
             <Typography.Text type={'danger'}>{descError}</Typography.Text>
           )}
-          <Select id="status" className="mt-1" value={formData?.status}>
+          <Select
+            className="mt-1 w-full"
+            defaultValue={formData?.status}
+            onChange={onChangeStatus}
+          >
             {options.map((s) => (
               <Select.Option key={s} value={s}>
                 {s}

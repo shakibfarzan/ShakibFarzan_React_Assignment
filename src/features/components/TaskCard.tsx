@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Badge } from 'antD';
+import { Card, Badge } from 'antd';
 import { TaskType } from '../task/taskSlice';
 import EditTask from './EditTask';
 
@@ -35,9 +35,11 @@ function TaskCard({
 
   return (
     <Badge.Ribbon text={status} color={color}>
-      <Card key={id} title={title} bordered={false}>
-        {description}
-        <EditTask id={id} />
+      <Card title={title} bordered={true} className="mb-1 w-full">
+        <div className="w-full card-desc">{description}</div>
+        <div className="card-buttons">
+          <EditTask id={id} />
+        </div>
       </Card>
     </Badge.Ribbon>
   );
