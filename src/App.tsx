@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import 'antd/dist/antd.css';
+import AddTask from './features/components/AddTask';
 
-function App() {
+function App(): React.ReactElement {
   return (
-    <div className="App">
-      
+    <div className="container">
+      <AddTask />
     </div>
   );
 }
