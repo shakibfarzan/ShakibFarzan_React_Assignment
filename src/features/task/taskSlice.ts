@@ -8,9 +8,9 @@ import { RootState } from '../../app/store';
 
 export type TaskType = {
   id: number;
-  title: string;
-  description: string;
-  status: 'ToDo' | 'In Progress' | 'Blocked' | 'InQA' | 'Done' | 'Deployed';
+  title?: string;
+  description?: string;
+  status?: 'ToDo' | 'In Progress' | 'Blocked' | 'InQA' | 'Done' | 'Deployed';
 };
 
 let lastID = 0;
