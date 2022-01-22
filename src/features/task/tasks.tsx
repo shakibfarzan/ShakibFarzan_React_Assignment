@@ -14,7 +14,7 @@ function Tasks(): React.ReactElement {
   });
 
   return (
-    <div className="card-container">
+    <div className="card-container shadow">
       {tasks.length > 0 ? (
         <Row>
           <Col xs={{ span: 20, offset: 2 }} lg={{ span: 9, offset: 2 }}>

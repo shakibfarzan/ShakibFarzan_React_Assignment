@@ -35,7 +35,7 @@ function TaskCard({
 
   return (
     <Badge.Ribbon text={status} color={color}>
-      <Card title={title} bordered={true} className="mb-1 w-full">
+      <Card title={title} bordered={true} className="mb-1 w-full shadow">
         <div className="w-full card-desc">{description}</div>
         <div className="card-buttons">
           <EditTask id={id} />
