@@ -24,6 +24,7 @@ function EditTask({ id }: Props): React.ReactElement {
   const [descError, setDescError] = useState('');
   const [isModalEditVisible, setIsModalEditVisible] = useState(false);
   const [isModalDeleteVisible, setIsModalDeleteVisible] = useState(false);
+  const [status, setStatus] = useState<any>();
 
   useEffect(() => {
     setFormData({
@@ -49,12 +50,18 @@ function EditTask({ id }: Props): React.ReactElement {
     }
   }, [formData?.description]);
 
+  useEffect(() => {
+    setStatus(formData?.status);
+  }, [formData?.status]);
+
   const onEdit = (e: any): void => {
     e.preventDefault();
     if (formData?.title && formData?.description) {
       dispatch(
         taskEdited({
-          ...formData,
+          title: formData?.title,
+          description: formData?.description,
+          status,
           id,
         }),
       );
@@ -81,10 +88,7 @@ function EditTask({ id }: Props): React.ReactElement {
   };
 
   const onChangeStatus = (value: any): void => {
-    setFormData({
-      ...formData,
-      status: value,
-    });
+    setStatus(value);
   };
 
   const options = [];
